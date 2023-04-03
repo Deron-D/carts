@@ -1,4 +1,4 @@
-#Submodule exercises
+#Submodule exercises 2
 FROM openjdk:8-alpine
 
 WORKDIR /usr/src/app
