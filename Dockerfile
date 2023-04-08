@@ -1,4 +1,3 @@
-#Debug
 FROM openjdk:8-alpine
 
 WORKDIR /usr/src/app
