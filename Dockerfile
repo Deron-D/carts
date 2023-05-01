@@ -7,8 +7,6 @@ FROM maven:3.6-jdk-11 AS builder
 COPY . /usr/src/mymaven
 WORKDIR /usr/src/mymaven
 RUN mvn -q -DskipTests package
-RUN pwd
-RUN ls -la ./target/
 
 # FROM openjdk:8-alpine
 # WORKDIR /usr/src/app
