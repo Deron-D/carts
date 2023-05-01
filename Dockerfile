@@ -1,5 +1,5 @@
 #FROM ubuntu:latest AS builder
-FROM maven:3.6-jdk-11 AS builder
+FROM gitlab.84.201.150.198.sslip.io/gitlab-instance-711bf56d/dependency_proxy/containers/maven:3.6-jdk-11 AS builder
 # RUN apt update -y && \
 #     apt install -y openjdk-8-jdk && \
 #     apt install -y maven
@@ -15,7 +15,7 @@ RUN ls -la ./target/
 # COPY --from=builder ./target/*.jar ./app.jar
 # ENTRYPOINT ["java","-Djava.security.egd=file:/dev/urandom","-jar","./app.jar", "--port=80"]
 
-FROM weaveworksdemos/msd-java:jre-latest
+FROM gitlab.84.201.150.198.sslip.io/gitlab-instance-711bf56d/dependency_proxy/containers/weaveworksdemos/msd-java:jre-latest
 
 WORKDIR /usr/src/app
 #WORKDIR /usr/src/mymaven
