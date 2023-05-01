@@ -7,7 +7,7 @@ COPY . /usr/src/mymaven
 WORKDIR /usr/src/mymaven
 RUN mvn -q -DskipTests package
 RUN pwd
-RUN ls -la
+RUN ls -la ./target/
 
 # FROM openjdk:8-alpine
 # WORKDIR /usr/src/app
@@ -18,9 +18,10 @@ RUN ls -la
 FROM weaveworksdemos/msd-java:jre-latest
 
 WORKDIR /usr/src/app
+#WORKDIR /usr/src/mymaven
 
 # COPY *.jar ./app.jar
-COPY --from=builder *.jar ./app.jar
+COPY --from=builder /usr/src/mymaven/target/*.jar ./app.jar
 
 RUN	chown -R ${SERVICE_USER}:${SERVICE_GROUP} ./app.jar
 
