@@ -1,9 +1,11 @@
-FROM ubuntu:latest AS builder
-RUN apt update -y && \
-    apt install -y openjdk-8-jdk && \
-    apt install -y maven
-COPY . .
-RUN mvn -DskipTests package
+#FROM ubuntu:latest AS builder
+FROM maven:3.6-jdk-11 AS builder
+# RUN apt update -y && \
+#     apt install -y openjdk-8-jdk && \
+#     apt install -y maven
+COPY . /usr/src/mymaven
+WORKDIR /usr/src/mymaven
+RUN mvn -q -DskipTests package
 
 # FROM openjdk:8-alpine
 # WORKDIR /usr/src/app
