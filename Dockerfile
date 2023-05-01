@@ -17,7 +17,7 @@ RUN ls -la ./target/
 # ENTRYPOINT ["java","-Djava.security.egd=file:/dev/urandom","-jar","./app.jar", "--port=80"]
 
 # FROM gitlab.84.201.150.198.sslip.io/gitlab-instance-711bf56d/dependency_proxy/containers/weaveworksdemos/msd-java:jre-latest
-FROM msd-java:jre-latest
+FROM weaveworksdemos/msd-java:jre-latest
 
 WORKDIR /usr/src/app
 #WORKDIR /usr/src/mymaven
