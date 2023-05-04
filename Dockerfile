@@ -1,4 +1,4 @@
-FROM maven:3.6-jdk-11 AS builder
+FROM gitlab.84.201.150.198.sslip.io:443/gitlab-instance-711bf56d/dependency_proxy/containers/maven:3.6-jdk-11 AS builder
 COPY . /usr/src/mymaven
 WORKDIR /usr/src/mymaven
 RUN mvn -q -DskipTests package
